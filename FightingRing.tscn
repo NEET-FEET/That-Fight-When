@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://bg.png" type="Texture" id=1]
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=2]
 [ext_resource path="res://WojakSprite.png" type="Texture" id=3]
 [ext_resource path="res://WojakSpriteAttack.png" type="Texture" id=4]
 [ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://Enemy.gd" type="Script" id=6]
+[ext_resource path="res://vRageSprite.png" type="Texture" id=7]
+[ext_resource path="res://vRageSpriteAttack.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=2]
 
@@ -29,6 +32,25 @@ animations = [ {
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
+
+[sub_resource type="SpriteFrames" id=4]
+
+animations = [ {
+"frames": [ ExtResource( 7 ) ],
+"loop": false,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": false,
+"name": "attack",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 43.1157, 127.557 )
 
 [node name="FightingRing" type="Node" index="0"]
 
@@ -142,5 +164,30 @@ _sections_unfolded = [ "Visibility" ]
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" index="1"]
 
 shape = SubResource( 1 )
+
+[node name="Enemy" type="KinematicBody2D" parent="." index="5"]
+
+position = Vector2( 516.34, 282.686 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Enemy" index="0"]
+
+position = Vector2( 49.5095, 59.3859 )
+scale = Vector2( 0.523652, 0.523652 )
+frames = SubResource( 4 )
+animation = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy" index="1"]
+
+position = Vector2( -11.7014, 52.8968 )
+scale = Vector2( 1.30891, 1.36658 )
+shape = SubResource( 5 )
 
 
