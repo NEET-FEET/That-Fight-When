@@ -10,7 +10,8 @@ config_version=3
 
 [application]
 
-config/name="New Game Project"
+config/name="That Fight When"
+run/main_scene="res://FightingRing.tscn"
 config/icon="res://icon.png"
 
 [rendering]
