@@ -9,12 +9,12 @@
 [ext_resource path="res://vRageSprite.png" type="Texture" id=7]
 [ext_resource path="res://vRageSpriteAttack.png" type="Texture" id=8]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 46.2692, 117.02 )
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
@@ -28,7 +28,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
 
 custom_solver_bias = 0.0
 extents = Vector2( 32, 32 )
@@ -52,7 +52,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 43.1157, 127.557 )
 
-[node name="FightingRing" type="Node" index="0"]
+[node name="FightingRing" type="Node"]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -78,13 +78,13 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player" index="0"]
 
 position = Vector2( 6.82745, -24.8714 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player" index="1"]
 
 position = Vector2( 6.34682, -22.3286 )
 scale = Vector2( 0.240364, 0.240364 )
-frames = SubResource( 3 )
+frames = SubResource( 2 )
 animation = "default"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="2"]
@@ -111,7 +111,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="1"]
 
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="." index="3"]
 
@@ -137,7 +137,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" index="1"]
 
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="." index="4"]
 
@@ -163,7 +163,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" index="1"]
 
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="Enemy" type="KinematicBody2D" parent="." index="5"]
 
