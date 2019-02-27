@@ -100,13 +100,13 @@ _sections_unfolded = [ "Visibility" ]
 
 shape = SubResource( 1 )
 
-[node name="FighterBase" parent="." index="4" instance=ExtResource( 4 )]
+[node name="FighterWojak" parent="." index="4" instance=ExtResource( 4 )]
 
-position = Vector2( 342, 217 )
+position = Vector2( 294.036, 294.036 )
 
-[node name="FighterWojak" parent="." index="5" instance=ExtResource( 5 )]
+[node name="FightervRage" parent="." index="5" instance=ExtResource( 5 )]
 
-position = Vector2( 637.758, 272.86 )
+position = Vector2( 539.202, 257.383 )
 PLAYER_ID = 2
 
 
