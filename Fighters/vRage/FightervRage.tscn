@@ -10,7 +10,7 @@ custom_solver_bias = 0.0
 radius = 44.692
 height = 151.793
 
-[node name="FightervRage" instance=ExtResource( 1 )]
+[node name="FightervRage" index="0" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 
