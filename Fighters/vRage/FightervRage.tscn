@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Fighters/FighterBase.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Fighters/Wojak/FighterWojak.gd" type="Script" id=2]
+[ext_resource path="res://Fighters/vRage/vRageSprites.tres" type="SpriteFrames" id=3]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 44.692
+height = 151.793
+
+[node name="FighterWojak" instance=ExtResource( 1 )]
+
+script = ExtResource( 2 )
+PLAYER_ID = 1
+
+[node name="Hurtbox" parent="." index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Sprite" parent="." index="1"]
+
+scale = Vector2( 0.409905, 0.409905 )
+frames = ExtResource( 3 )
+animation = "Idle"
+_sections_unfolded = [ "Transform" ]
+
+
